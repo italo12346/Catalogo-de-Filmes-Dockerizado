@@ -17,7 +17,7 @@ export function MovieCard({ movie }: MovieCardProps) {
       </div>
       <p className=" mb-4">Diretor: {movie.director}</p>
       <div className="flex justify-between items-center border-t border-white/10 pt-4">
-        <span className="text-[#4cc9f4] font-medium">{movie.releaseYear}</span>
+        <span className="text-[#4cc9f4] font-medium">{movie.year}</span>
         <span className="font-bold text-[#f63090]">⭐ {movie.rating}</span>
       </div>
     </div>
