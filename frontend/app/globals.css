@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Cores base da paleta */
+  --primary: #f63090; /* Rosa */
+  --secondary: #4cc9f4; /* Azul */
+  --bg-color: #e1f0f0; /* Fundo Claro */
+  --text-color: #37313c; /* Texto Escuro */
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.5);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --bg-color: #37313c; /* Fundo Escuro */
+  --text-color: #e1f0f0; /* Texto Claro */
+  --glass-bg: rgba(0, 0, 0, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Adiciona um gradiente suave ao fundo */
+  background-image:
+    radial-gradient(circle at top right, var(--secondary), transparent 400px),
+    radial-gradient(circle at bottom left, var(--primary), transparent 400px);
+  background-attachment: fixed;
+}
+
+/* Efeito Glassmorphism Ajustado */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #f63090 0%, #4cc9f4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+input::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+select {
+  color: inherit;
+  background-color: var(--glass-bg);
 }
