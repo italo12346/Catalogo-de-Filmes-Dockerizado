@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { Movie } from "../../domain/entities/movie";
+import { Movie } from "../../domain/entities/Movie";
 import { IMovieRepository } from "../../domain/repositories/MovieRepository";
 
 const prisma = new PrismaClient();

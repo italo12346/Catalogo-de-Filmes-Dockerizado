@@ -2,7 +2,7 @@ import { addMovieAction } from "../actions";
 
 export function MovieForm() {
   return (
-    // Adicionamos o 'action' que chama nossa função do servidor
+    // 'action' que chama nossa função do servidor
     <form
       action={addMovieAction}
       className="glass p-8 rounded-2xl mb-12 border-white/20"

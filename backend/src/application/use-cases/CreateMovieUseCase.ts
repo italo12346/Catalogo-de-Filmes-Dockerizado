@@ -1,4 +1,4 @@
-import { Movie } from "../../domain/entities/movie";
+import { Movie } from "../../domain/entities/Movie";
 import { IMovieRepository } from "../../domain/repositories/MovieRepository";
 
 interface CreateMovieRequest {

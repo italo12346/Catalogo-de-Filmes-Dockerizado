@@ -7,17 +7,17 @@ export async function fetchMovies() {
   const data = await response.json();
   const list = Array.isArray(data) ? data : (data.movies ?? data.data ?? []);
 
-  return list.map((item: Record<string, Record<string, unknown>>) => ({
+  return list.map((item: any) => ({
     id: item.props.id,
     title: item.props.title,
     director: item.props.director,
     genre: item.props.genre,
-    year: item.props.releaseYear,
+    releaseYear: item.props.releaseYear,
     rating: item.props.rating,
   }));
 }
 
-export async function createMovie(data: Record<string, unknown>) {
+export async function createMovie(data: any) {
   const response = await fetch(`${API_URL}/movies`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -25,4 +25,21 @@ export async function createMovie(data: Record<string, unknown>) {
   });
   if (!response.ok) throw new Error("Erro ao salvar filme");
   return response.json();
+}
+
+export async function updateMovie(id: string, data: any) {
+  const response = await fetch(`${API_URL}/movies/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) throw new Error("Erro ao atualizar filme");
+  return response.json();
+}
+
+export async function deleteMovie(id: string) {
+  const response = await fetch(`${API_URL}/movies/${id}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) throw new Error("Erro ao excluir filme");
 }
