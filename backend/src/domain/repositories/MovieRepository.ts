@@ -1,4 +1,4 @@
-import { Movie } from "../entities/movie";
+import { Movie } from "../entities/Movie";
 
 export interface IMovieRepository {
   findAll(): Promise<Movie[]>;
