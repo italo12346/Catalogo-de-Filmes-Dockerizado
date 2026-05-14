@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: movie-frontend
+  template:
+    metadata:
+      labels:
+        app: movie-frontend
+    spec:
+      containers:
+        - name: movie-frontend
+          image: italo12346/movie-frontend:v1.0 # Sua imagem do Docker Hub!
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-frontend-service
+spec:
+  type: LoadBalancer # Cria um IP público para acessar o site
+  selector:
+    app: movie-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000

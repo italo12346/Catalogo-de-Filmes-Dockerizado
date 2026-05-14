@@ -11,7 +11,7 @@ interface MovieCardProps {
 export function MovieCard({ movie, onEdit }: MovieCardProps) {
   const handleDelete = async () => {
     if (confirm(`Deseja realmente excluir o filme "${movie.title}"?`)) {
-      await deleteMovieAction(movie.id);
+      await deleteMovieAction(movie.id.toString());
     }
   };
 
