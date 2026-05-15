@@ -2,6 +2,18 @@
 
 Um sistema completo de gestão de filmes desenvolvido com uma arquitetura moderna, robusta e escalável. O projeto utiliza **Clean Architecture** no backend e as tecnologias mais recentes do ecossistema React no frontend.
 
+## 📸 Demonstração das Telas
+
+|    Home (Light Mode)    |         Home (Dark Mode)          |
+| :---------------------: | :-------------------------------: |
+| ![Home](./img/Home.png) | ![Home Dark](./img/Home-dark.png) |
+
+|     Cadastro de Filmes      |      Edição de Filmes       |
+| :-------------------------: | :-------------------------: |
+| ![Create](./img/Create.png) | ![Update](./img/Update.png) |
+
+---
+
 ## 🚀 Tecnologias Utilizadas
 
 ### Frontend
@@ -57,7 +69,7 @@ O projeto utiliza uma estética **Cyberpunk/Futurista**:
 
 - Node.js v22+
 - Docker & Docker Compose
-- (Opcional) Kubernetes / Minikube
+- (Opcional) Kubernetes / Docker Desktop
 
 ### Execução Local (Desenvolvimento)
 
@@ -99,7 +111,7 @@ Os manifestos na pasta `k8s/` permitem o deploy em clusters Kubernetes:
    ```
 2. **Subir os Serviços:**
    ```bash
-   kubectl apply -f k8s/
+   kubectl apply -f k8s/ --validate=false
    ```
 
 Imagens oficiais utilizadas:

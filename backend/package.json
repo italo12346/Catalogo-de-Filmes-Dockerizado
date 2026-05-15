@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx ts-node src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node src/server.s"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
