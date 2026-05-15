@@ -1,6 +1,6 @@
 # 🎬 Catálogo de Filmes Profissional
 
-Um sistema completo de gestão de filmes desenvolvido com uma arquitetura moderna, robusta e escalável. O projeto utiliza **Clean Architecture** no backend e as tecnologias mais recentes do ecossistema React no frontend.
+Um sistema completo de gestão de filmes desenvolvido com uma arquitetura moderna, robusta e escalável. O projeto utiliza **Clean Architecture** no backend e as tecnologias mais recentes do ecossistema React no frontend totalmente dockerizado e com suporte a deploy em Kubernetes.
 
 ## 📸 Demonstração das Telas
 
